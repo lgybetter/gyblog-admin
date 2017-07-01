@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { IState } from '../../reducers/state';
 import { login } from '..//../actions';
+import { RouteComponentProps } from 'react-router'
 import { autobind } from 'core-decorators';
 import './App.css';
 
@@ -12,7 +13,7 @@ interface AppState {
   userToken: string;
 }
 
-interface AppProps {
+interface AppProps extends RouteComponentProps<App>{
   token: string;
   dispatch: Dispatch<{}>;
 }
@@ -60,5 +61,4 @@ class App extends React.Component<AppProps, AppState> {
   }
 }
 
-// export default App;
-export default connect(mapStateToProps)(App);
+export default App;
