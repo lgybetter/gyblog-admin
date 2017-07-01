@@ -9,6 +9,10 @@
     address "^1.0.1"
     debug "^2.6.0"
 
+"@types/core-decorators@^0.10.32":
+  version "0.10.32"
+  resolved "https://registry.yarnpkg.com/@types/core-decorators/-/core-decorators-0.10.32.tgz#3cb635da99980176832ec420875f7efce1822b5e"
+
 "@types/history@*":
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.0.tgz#093d67ed780d889c9543f6dca24ebee0b6b9fc45"
@@ -1005,6 +1009,10 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+core-decorators@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/core-decorators/-/core-decorators-0.19.0.tgz#28c9b44aa6208902934627a28f4f5950bd5b463e"
 
 core-js@^1.0.0:
   version "1.2.7"
