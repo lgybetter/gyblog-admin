@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import { login } from  '../../actions';
 import { RouteComponentProps } from 'react-router';
 import { autobind } from 'core-decorators';
+import { IState } from '../../reducers/state';
+import { withRouter } from 'react-router';
 import './Login.css';
+// import { IAdmin } from '../../models/admin';
 
 interface LoginState {
   account: string,
@@ -12,10 +15,18 @@ interface LoginState {
 }
 
 interface LoginProps extends RouteComponentProps<Login> {
+  token: string;
   dispatch: Dispatch<{}>;
 }
 
-@(connect() as any)
+const mapStateToProps = (state: IState) => {
+  return {
+    token: state.admin.token
+  };
+};
+
+@(connect(mapStateToProps) as any)
+@(withRouter as any)
 @autobind
 class Login extends React.Component<LoginProps, LoginState> {
   constructor () {
@@ -25,20 +36,26 @@ class Login extends React.Component<LoginProps, LoginState> {
       password: ''
     };
   }
+
+  componentWillReceiveProps(nextProps: any) {
+    if (nextProps.token) {
+      this.props.history.replace('/');
+    }
+  }
   
-  accountChange (event: any) {
+  private accountChange (event: any) {
     this.setState({
       account: event.target.value
     });
   }
 
-  passwordChange (event: any) {
+  private passwordChange (event: any) {
     this.setState({
       password: event.target.value
     });
   }
 
-  loginHandler () {
+  private loginHandler () {
     if (this.state.account && this.state.password) {
       this.props.dispatch(login({
         account: this.state.account,

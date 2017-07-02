@@ -12,8 +12,8 @@ const login = createAction<Promise<IAdmin>, ILogin>('login', async (payload: ILo
   console.log(res);
   return {
     token: res.data.token,
-    name: res.data.name,
-    email: res.data.email
+    name: res.data.data.name,
+    email: res.data.data.email
   };
 });
 
