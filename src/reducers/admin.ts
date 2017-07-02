@@ -3,20 +3,16 @@ import { IAdmin } from '../models/admin';
 
 const initialState: IAdmin = {
   token: 'admin',
-  user: {
-    name: '',
-    email: ''
-  }
+  name: '',
+  email: ''
 };
 
 const actions = {
   login: (state: IAdmin, action: Action<IAdmin>): IAdmin => {
     return {
       token: action.payload.token,
-      user: {
-        name: action.payload.user.name,
-        email: action.payload.user.email
-      }
+      name: action.payload.name,
+      email: action.payload.email
     };
   }
 };

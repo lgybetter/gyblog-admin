@@ -13,24 +13,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 450px;
   background: white;
   border-radius: 5px;
 }
 
 .w-login-form :first-child {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .w-login-form input, button {
   box-sizing: border-box;
   width: 70%;
-  height: 35px;
+  height: 50px;
 }
 
 .w-login-form button {
-  margin: 8px 0 0 0;
+  margin: 15px 0 0 0;
   background: #007fff;
   outline: none;
   border: 0 solid #007fff;
@@ -42,15 +42,16 @@
   background: #005fff;
 }
 
-.w-login-form h3, h5 {
-  margin: 10px 0 5px 0;
+.w-login-form h1, h3 {
+  margin: 10px 0 10px 0;
 }
 
 .w-login-form input {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   color: #007fff; 
   padding: 5px 10px;
   outline: none;
+  font-size: 18px;
   border-radius: 3px;
   border: .5px solid #ccc;
 }
