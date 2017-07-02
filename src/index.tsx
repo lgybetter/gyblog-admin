@@ -29,7 +29,13 @@ ReactDOM.render(
             <Redirect to="/login"/>
           )
         }/>
-        <Route exact path="/login" component={Login}/>
+        <Route exact path="/login" render={() => 
+          (JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).token) ? (
+            <Redirect to="/"/>
+          ) : (
+            <Route component={Login} />
+          )
+        }/>
       </div>
     </Router>
   </Provider>,
