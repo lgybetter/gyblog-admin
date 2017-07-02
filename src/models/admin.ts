@@ -5,3 +5,8 @@ export interface IAdmin {
     email: string
   }
 }
+
+export interface ILogin {
+  account: string,
+  password: string
+}

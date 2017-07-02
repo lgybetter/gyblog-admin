@@ -1,12 +1,15 @@
 import { createAction } from 'redux-actions';
-import { IAdmin } from '../models/admin';
+import { IAdmin, ILogin } from '../models/admin';
 
-const login = createAction<IAdmin, IAdmin>('login', (payload: IAdmin) => {
+const login = createAction<IAdmin, ILogin>('login', (payload: ILogin) => {
+  console.log(payload.account);
+  console.log(payload.password);
+  //发送请求
   return {
-    token: payload.token,
+    token: '1234',
     user: {
-      name: payload.user.name,
-      email: payload.user.email
+      name: 'lgy',
+      email: '123'
     }
   };
 });

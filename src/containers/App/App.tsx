@@ -2,8 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { IState } from '../../reducers/state';
-import { login } from '..//../actions';
-import { RouteComponentProps } from 'react-router'
+// import { login } from '../../actions';
+import { RouteComponentProps } from 'react-router';
 import { autobind } from 'core-decorators';
 import './App.css';
 
@@ -13,7 +13,8 @@ interface AppState {
   userToken: string;
 }
 
-interface AppProps extends RouteComponentProps<App>{
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/13689
+interface AppProps extends RouteComponentProps<App> {
   token: string;
   dispatch: Dispatch<{}>;
 }
@@ -34,15 +35,15 @@ class App extends React.Component<AppProps, AppState> {
     };
   }
 
-  handlerClick () {
-    this.props.dispatch(login({
-      token: 'lgylgy',
-      user: {
-        name: 'lgt',
-        email: '434334234@qq.com'
-      }
-    }));
-  }
+  // handlerClick () {
+  //   this.props.dispatch(login({
+  //     token: 'lgylgy',
+  //     user: {
+  //       name: 'lgt',
+  //       email: '434334234@qq.com'
+  //     }
+  //   }));
+  // }
 
   render() {
     return (
@@ -51,7 +52,7 @@ class App extends React.Component<AppProps, AppState> {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <button onClick={this.handlerClick}>Test</button>
+        {/*<button onClick={this.handlerClick}>Test</button>*/}
         <h1>{this.props.token} laalalal</h1>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
