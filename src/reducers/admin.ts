@@ -1,7 +1,7 @@
 import { handleActions, Action } from 'redux-actions';
 import { IAdmin } from '../models/admin';
 
-const initialState: IAdmin = {
+const initialState: IAdmin = JSON.parse(localStorage.getItem('user')) || {
   token: '',
   name: '',
   email: ''

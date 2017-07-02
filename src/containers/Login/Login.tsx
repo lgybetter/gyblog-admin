@@ -70,10 +70,10 @@ class Login extends React.Component<LoginProps, LoginState> {
     return (
       <div className="p-login">
         <div className="w-login-form">
-          <h1>GyBlog Admin</h1>
-          <h3>account</h3>
+          <h2>GyBlog Admin</h2>
+          <h4>account</h4>
           <input type="text" onChange={this.accountChange}/>
-          <h3>password</h3>
+          <h4>password</h4>
           <input type="password" onChange={this.passwordChange}/>
           <button type="button" onClick={this.loginHandler}>login</button>
         </div>
