@@ -9,7 +9,6 @@ const login = createAction<Promise<IAdmin>, ILogin>('login', async (payload: ILo
       password: payload.password
     }
   });
-  console.log(res);
   return {
     token: res.data.token,
     name: res.data.data.name,

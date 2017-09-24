@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { login } from  '../../actions';
+import { login } from  '../../actions/auth';
 import { RouteComponentProps } from 'react-router';
 import { autobind } from 'core-decorators';
 import { IState } from '../../reducers/state';
@@ -39,7 +39,7 @@ class Login extends React.Component<LoginProps, LoginState> {
 
   componentWillReceiveProps(nextProps: any) {
     if (nextProps.token) {
-      this.props.history.replace('/');
+      this.props.history.push('/');
     }
   }
   
