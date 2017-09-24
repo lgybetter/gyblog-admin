@@ -1,5 +1,7 @@
 import { IAdmin } from '../models/admin'
+import { IPostState } from './posts'
 
 export interface IState {
-  admin: IAdmin
+  adminState: IAdmin,
+  postState: IPostState
 }

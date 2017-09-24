@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import admin from './admin';
+import adminState from './admin';
+import postState from './posts'
 
 const rootReducer = combineReducers({
-  admin
+  postState,
+  adminState
 });
 
 export default rootReducer;

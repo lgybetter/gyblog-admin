@@ -6,8 +6,7 @@ import { Route } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { autobind } from 'core-decorators';
 import { Layout, Menu, Icon } from 'antd';
-import Admin from '../modules/Admin/Admin'
-import CommonUsers from '../modules/CommonUsers/CommonUsers'
+import { Admin, CommonUsers, Post } from '../modules'
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 import './Home.css';
@@ -24,7 +23,7 @@ interface HomeProps extends RouteComponentProps<Home> {
 
 const mapStateToProps = (state: IState) => {
   return {
-    token: state.admin.token
+    token: state.adminState.token
   };
 };
 
@@ -80,11 +79,12 @@ class Home extends React.Component<HomeProps, HomeState> {
             <Content style={{ padding: '0 24px', minHeight: 650 }}>
               <Route path="/admin" component={Admin}/>
               <Route path="/common-users" component={CommonUsers}/>
+              <Route path="/open-posts" component={Post}/>
             </Content>
           </Layout>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©2016 Created by Ant UED
+          GyAdmin ©2017 Created by lgybetter
         </Footer>
       </Layout>
     );

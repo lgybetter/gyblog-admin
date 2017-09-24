@@ -4,7 +4,7 @@ import { request } from './request'
 
 const login = createAction<Promise<IAdmin>, ILogin>('login', async (payload: ILogin) => {
   await request({
-    url: '',
+    url: '/signIn',
     method: 'post',
     data: {
       email: payload.account,

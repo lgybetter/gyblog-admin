@@ -2,12 +2,10 @@ import * as React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { login } from  '../../actions/auth';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
 import { autobind } from 'core-decorators';
 import { IState } from '../../reducers/state';
-import { withRouter } from 'react-router';
 import './Login.css';
-// import { IAdmin } from '../../models/admin';
 
 interface LoginState {
   account: string,
@@ -21,7 +19,7 @@ interface LoginProps extends RouteComponentProps<Login> {
 
 const mapStateToProps = (state: IState) => {
   return {
-    token: state.admin.token
+    token: state.adminState.token
   };
 };
 
