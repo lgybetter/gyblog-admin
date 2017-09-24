@@ -1,21 +1,23 @@
-import { createAction } from 'redux-actions';
-import { IAdmin, ILogin } from '../models/admin';
-import axios from 'axios';
+import { createAction } from 'redux-actions'
+import { IAdmin, ILogin } from '../models/admin'
+import { request } from './request'
 
 const login = createAction<Promise<IAdmin>, ILogin>('login', async (payload: ILogin) => {
-  const res = await axios.get('http://localhost:3001/api/user', {
-    params: {
+  await request({
+    url: '',
+    method: 'post',
+    data: {
       email: payload.account,
       password: payload.password
     }
-  });
+  })
   return {
-    token: res.data.token,
-    name: res.data.data.name,
-    email: res.data.data.email
-  };
-});
+    token: 'token',
+    name: 'lgybetter',
+    email: '437675103@qq.com'
+  }
+})
 
 export {
   login
-};
+}
